@@ -1,6 +1,14 @@
 // Una función que crea con filas arbitrarias
 // la matriz A de coeficientes y el vector b
-function [A, b] = plates(V, L, y0, x0, m, filas)
+function [A, b] = plates(filas)
+
+	// Constantes
+	V=100
+	L=500
+	y0=0.09
+	x0=0
+	m=0.12
+
 	// Vector b
 	b = zeros(filas,1)
 	b(1) = V*y0
@@ -20,19 +28,16 @@ function [A, b] = plates(V, L, y0, x0, m, filas)
 	A = _A(:,2:filas+1)
 endfunction
 
-V=100
-L=500
-y0=0.09
-x0=0
-m=0.12
-filas=5
+function mainB()
+	filas=5
 
-[A b] = plates(V, L, y0, x0, m, filas)
+	[A b] = plates(filas)
 
-printf('A:\n')
-disp(A)
-printf('\n')
+	printf('A:\n')
+	disp(A)
+	printf('\n')
 
-printf('B:\n')
-disp(b)
-printf('\n')
+	printf('B:\n')
+	disp(b)
+	printf('\n')
+endfunction
