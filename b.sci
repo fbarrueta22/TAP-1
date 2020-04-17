@@ -22,6 +22,7 @@ function [A, b] = plates(filas, Vm, Lm)
 	// La fila que forma el resto de filas
 	fila = [-V*m L+m*V -L]
 
+	// Repitiendo la misma fila pero con un padding de 0s
 	for i = 1:filas
 		_A(i,:) = _A(i,:) + [zeros(1, i-1) fila zeros(1, filas+2-3-(i-1))]
 	end
