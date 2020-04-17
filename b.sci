@@ -1,10 +1,13 @@
 // Una función que crea con filas arbitrarias
 // la matriz A de coeficientes y el vector b
-function [A, b] = plates(filas)
+// filas: El número de platos
+// Vm: El multiplicador a la corriente de gas
+// Lm: EL multiplicador a la corriente de aceite
+function [A, b] = plates(filas, Vm, Lm)
 
 	// Constantes
-	V=100
-	L=500
+	V=100*Vm
+	L=500*Lm
 	y0=0.09
 	x0=0
 	m=0.12
@@ -31,7 +34,7 @@ endfunction
 function mainB()
 	filas=5
 
-	[A b] = plates(filas)
+	[A b] = plates(filas,1,1)
 
 	printf('A:\n')
 	disp(A)

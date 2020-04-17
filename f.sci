@@ -6,7 +6,7 @@ function [P] = P()
 	ORDER = 6
 
 	// Matriz original
-	[N b] = plates(ORDER)
+	[N b] = plates(ORDER,1,1)
 
 	// Resultado
 	P = zeros(ORDER, ORDER)
