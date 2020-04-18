@@ -1,4 +1,4 @@
-exec('b.sci')
+exec('plates.sci')
 
 [N, B] = plates(6, 1.25, 1.2)
 
